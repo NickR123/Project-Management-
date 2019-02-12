@@ -86,5 +86,59 @@ namespace ProjectTesting
             Error = AStaff.Valid(SomeStaffFirstName);
             Assert.AreEqual(Error, "");
         }
+        [TestMethod]
+        public void InstanceOK()
+        {
+            clsProduct AProduct = new clsProduct();
+            Assert.IsNotNull(AProduct);
+        }
+        [TestMethod]
+        public void ProductNameOK()
+        {
+            clsProduct AProduct = new clsProduct();
+            string SomeProductName = "Fred";
+            AProduct.ProductName = SomeProductName;
+            Assert.AreEqual(AProduct.ProductName, SomeProductName);
+        }
+
+        [TestMethod]
+        public void DescriptionOK()
+        {
+            clsProduct AProduct = new clsProduct();
+            string SomeDescription = "Fred";
+            AProduct.Description = SomeDescription;
+            Assert.AreEqual(AProduct.Description, SomeDescription);
+        }
+
+        [TestMethod]
+        public void ActiveProductOK()
+        {
+            clsProduct AProduct = new clsProduct();
+            string SomeActive = "Jimblor";
+            AProduct.Active = SomeActive;
+            Assert.AreEqual(AProduct.Active, SomeActive);
+        }
+
+
+
+        [TestMethod]
+        public void FindMethodOk()
+        {
+            clsProduct AProduct = new clsProduct();
+            Boolean Found = false;
+            string ProductName = "john";
+            Found = AProduct.Find(ProductName);
+            Assert.IsTrue(Found);
+        }
+
+        [TestMethod]
+        public void ValidMethodOk()
+        {
+            clsProduct AProduct = new clsProduct();
+            String Error = "";
+            string SomeProductName = "john";
+            Error = AProduct.Valid(SomeProductName);
+            Assert.AreEqual(Error, "");
+        }
     }
 }
