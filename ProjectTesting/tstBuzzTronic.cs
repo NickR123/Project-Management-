@@ -87,7 +87,7 @@ namespace ProjectTesting
             Assert.AreEqual(Error, "");
         }
         [TestMethod]
-        public void InstanceOK()
+        public void Instance2OK()
         {
             clsProduct AProduct = new clsProduct();
             Assert.IsNotNull(AProduct);
@@ -96,7 +96,7 @@ namespace ProjectTesting
         public void ProductNameOK()
         {
             clsProduct AProduct = new clsProduct();
-            string SomeProductName = "Fred";
+            string SomeProductName = "Samsung";
             AProduct.ProductName = SomeProductName;
             Assert.AreEqual(AProduct.ProductName, SomeProductName);
         }
@@ -105,7 +105,7 @@ namespace ProjectTesting
         public void DescriptionOK()
         {
             clsProduct AProduct = new clsProduct();
-            string SomeDescription = "Fred";
+            string SomeDescription = "Red";
             AProduct.Description = SomeDescription;
             Assert.AreEqual(AProduct.Description, SomeDescription);
         }
@@ -114,7 +114,7 @@ namespace ProjectTesting
         public void ActiveProductOK()
         {
             clsProduct AProduct = new clsProduct();
-            string SomeActive = "Jimblor";
+            Boolean SomeActive = true;
             AProduct.Active = SomeActive;
             Assert.AreEqual(AProduct.Active, SomeActive);
         }
@@ -122,21 +122,21 @@ namespace ProjectTesting
 
 
         [TestMethod]
-        public void FindMethodOk()
+        public void FindMethodOk2()
         {
             clsProduct AProduct = new clsProduct();
             Boolean Found = false;
-            string ProductName = "john";
+            string ProductName = "Samsung";
             Found = AProduct.Find(ProductName);
             Assert.IsTrue(Found);
         }
 
         [TestMethod]
-        public void ValidMethodOk()
+        public void ValidMethodOk2()
         {
             clsProduct AProduct = new clsProduct();
             String Error = "";
-            string SomeProductName = "john";
+            string SomeProductName = "Samsung";
             Error = AProduct.Valid(SomeProductName);
             Assert.AreEqual(Error, "");
         }
