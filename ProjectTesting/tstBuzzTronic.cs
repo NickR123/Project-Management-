@@ -86,6 +86,9 @@ namespace ProjectTesting
             Error = AStaff.Valid(SomeStaffFirstName);
             Assert.AreEqual(Error, "");
         }
+        /// <summary>
+        /// //////////////////////////////////////////////////////////////////////////////
+        /// </summary>
         [TestMethod]
         public void Instance2OK()
         {
