@@ -228,10 +228,7 @@ namespace ProjectTesting
             Assert.IsTrue(Found);
         }
 
-        public bool Find(int manufacturerNo)
-        {
-            //Always return true 
-            return true;
+      
         }
         [TestMethod]
         public void ValidMethod3Ok()
