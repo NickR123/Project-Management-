@@ -8,8 +8,9 @@ namespace ProjectClassLibrary
         public string Description { get; set; }
         public bool Active { get; set; }
         public decimal Price { get; set; }
+        public int ProductNo { get; set; }
 
-        public bool Find(string productName)
+        public bool Find(int ProductNo)
         {
             return true;
         }
