@@ -11,7 +11,7 @@ namespace ProjectClassLibrary
         public int StaffPhoneNo { get; set; }
         public string StaffPostCode { get; set; }
 
-        public bool Find(string staffFirstName)
+        public bool Find(int staffNo)
         {
             return true;
         }

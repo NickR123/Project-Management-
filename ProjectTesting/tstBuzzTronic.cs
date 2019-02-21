@@ -73,8 +73,8 @@ namespace ProjectTesting
         {
             clsStaff AStaff = new clsStaff();
             Boolean Found = false;
-            string StaffFirstName = "john";
-            Found = AStaff.Find(StaffFirstName);
+            Int32 StaffNo = 1;
+            Found = AStaff.Find(StaffNo);
             Assert.IsTrue(Found);
         }
 
