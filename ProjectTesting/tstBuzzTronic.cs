@@ -115,6 +115,15 @@ namespace ProjectTesting
         }
 
         [TestMethod]
+        public void PriceOK()
+        {
+            clsProduct AProduct = new clsProduct();
+            decimal SomePrice = 1;
+            AProduct.Price = SomePrice;
+            Assert.AreEqual(AProduct.Price, SomePrice);
+        }
+
+        [TestMethod]
         public void ActiveProductOK()
         {
             clsProduct AProduct = new clsProduct();
@@ -228,8 +237,8 @@ namespace ProjectTesting
             Assert.IsTrue(Found);
         }
 
-      
-        }
+
+
         [TestMethod]
         public void ValidMethod3Ok()
         {
@@ -245,6 +254,7 @@ namespace ProjectTesting
             Assert.AreEqual(Error, "");
         }
 
-       
+
     }
 
+}

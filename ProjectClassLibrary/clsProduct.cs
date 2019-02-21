@@ -7,6 +7,7 @@ namespace ProjectClassLibrary
         public string ProductName { get; set; }
         public string Description { get; set; }
         public bool Active { get; set; }
+        public decimal Price { get; set; }
 
         public bool Find(string productName)
         {
