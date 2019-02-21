@@ -96,6 +96,15 @@ namespace ProjectTesting
             clsProduct AProduct = new clsProduct();
             Assert.IsNotNull(AProduct);
         }
+
+        [TestMethod]
+        public void ProductNoOK()
+        {
+            clsProduct AProduct = new clsProduct();
+            int SomeProductNo = 123;
+            AProduct.ProductNo = SomeProductNo;
+            Assert.AreEqual(AProduct.ProductNo, SomeProductNo);
+        }
         [TestMethod]
         public void ProductNameOK()
         {
@@ -139,8 +148,8 @@ namespace ProjectTesting
         {
             clsProduct AProduct = new clsProduct();
             Boolean Found = false;
-            string ProductName = "Samsung";
-            Found = AProduct.Find(ProductName);
+            Int32 ProductNo = 1;
+            Found = AProduct.Find(ProductNo);
             Assert.IsTrue(Found);
         }
 
