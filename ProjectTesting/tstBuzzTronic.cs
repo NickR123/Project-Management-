@@ -87,6 +87,29 @@ namespace ProjectTesting
             Error = AStaff.Valid(SomeStaffFirstName);
             Assert.AreEqual(Error, "");
         }
+        
+       
+        [TestMethod]
+        public void TestStaffNoFound()
+        {
+            //create an instance of the class we want to create
+            clsStaff AnStaff = new clsStaff();
+            //boolean variable to store the result of the search
+            Boolean Found = false;
+            //boolean variable to store the result of the search
+            Boolean OK = true;
+            //create some test data to use with the method
+            Int32 StaffNo = 21;
+            //invoke the method
+            Found = AnStaff.Find(StaffNo);
+            //check the staff No
+            if (AnStaff.StaffNo != 21)
+            {
+                OK = false;
+            }
+            //test the result is correct
+            Assert.IsTrue(OK);
+        }
         /// <summary>
         /// //////////////////////////////////////////////////////////////////////////////
         /// </summary>
