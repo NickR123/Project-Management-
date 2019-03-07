@@ -44,7 +44,7 @@ public class clsDataConnection
         //connectionString = "Data Source=(LocalDB)\\v11.0;AttachDbFilename=" + GetDBName() + ";Integrated Security=True;Connect Timeout=30";
         //connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"" + GetDBName() + "\";Integrated Security=True;Connect Timeout=30";
         connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"###\";Integrated Security=True;Connect Timeout=30";
-        SomePath = "I:\\App_Data\\BuzztronicData.mdf";
+        SomePath = GetDBName();//"I:\\App_Data\\BuzztronicData.mdf";
         connectionString = connectionString.Replace("###", SomePath);
         return connectionString;
     }

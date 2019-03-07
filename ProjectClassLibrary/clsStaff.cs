@@ -81,7 +81,7 @@ namespace ProjectClassLibrary
         public bool Find(int staffNo)
         {
             clsDataConnection DB = new clsDataConnection();
-            DB.AddParameter("@StaffNo", StaffNo);
+            DB.AddParameter("@StaffNo", staffNo);
             DB.Execute("sproc_TblStaff_FilterByStaffNo");
             if(DB.Count == 1)
             {
