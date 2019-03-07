@@ -8,6 +8,13 @@ namespace ProjectTesting
     [TestClass]
     public class tstStaff
     {
+        string StaffNo = "1";
+        string FirstName = "John";
+        string LastName = "Fiddle";
+        string StaffAddress = "21 lane";
+        string StaffPhoneNo = "1234567891";
+        string staffPostCode = "LE4 4ab";
+
         [TestMethod]
         public void InstanceOK()
         {
@@ -83,8 +90,7 @@ namespace ProjectTesting
         {
             clsStaff AStaff = new clsStaff();
             String Error = "";
-            string SomeStaffFirstName = "john";
-            Error = AStaff.Valid(SomeStaffFirstName);
+            Error = AStaff.Valid(StaffNo,FirstName,LastName,StaffAddress,StaffPhoneNo,staffPostCode);
             Assert.AreEqual(Error, "");
         }
 

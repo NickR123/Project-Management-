@@ -100,7 +100,7 @@ namespace ProjectClassLibrary
             }
         }
 
-        public string Valid(string someStaffFirstName)
+        public string Valid(string StaffNo, string FirstName, string LastName, string StaffAddress, string StaffPhoneNo, string StaffPostCode)
         {
             return "";
         }
