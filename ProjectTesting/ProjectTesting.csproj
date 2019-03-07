@@ -50,6 +50,10 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="tstBuzzTronic.cs" />
+    <Compile Include="tstManufacturer.cs" />
+    <Compile Include="tstOrder.cs" />
+    <Compile Include="tstProduct.cs" />
+    <Compile Include="tstStaff.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
