@@ -80,5 +80,111 @@ namespace ProjectTesting
             Error = AProduct.Valid(SomeProductName);
             Assert.AreEqual(Error, "");
         }
+        [TestMethod]
+        public void TestProductNoFound()
+        {
+            //create an instance of the class we want to create
+            clsProduct AnProduct = new clsProduct();
+            //boolean variable to store the result of the search
+            Boolean Found = false;
+            //boolean variable to store the result of the search
+            Boolean OK = true;
+            //create some test data to use with the method
+            Int32 ProductNo = 1;
+            //invoke the method
+            Found = AnProduct.Find(ProductNo);
+            //check the staff No
+            if (AnProduct.ProductNo!= 1)
+            {
+                OK = false;
+            }
+            //test the result is correct
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void TestProductNameFound()
+        {
+            //create an instance of the class we want to create
+            clsProduct AnProduct = new clsProduct();
+            //boolean variable to store the result of the search
+            Boolean Found = false;
+            //boolean variable to store the result of the search
+            Boolean OK = true;
+            //create some test data to use with the method
+            Int32 ProductNo = 1;
+            //invoke the method
+            Found = AnProduct.Find(ProductNo);
+            //check the staff No
+            if (AnProduct.ProductName != "Samsung")
+            {
+                OK = false;
+            }
+            //test the result is correct
+            Assert.IsTrue(OK);
+        }
+        [TestMethod]
+        public void TestDescriptionFound()
+        {
+            //create an instance of the class we want to create
+            clsProduct AnProduct = new clsProduct();
+            //boolean variable to store the result of the search
+            Boolean Found = false;
+            //boolean variable to store the result of the search
+            Boolean OK = true;
+            //create some test data to use with the method
+            Int32 ProductNo = 1;
+            //invoke the method
+            Found = AnProduct.Find(ProductNo);
+            //check the staff No
+            if (AnProduct.Description != "Black")
+            {
+                OK = false;
+            }
+            //test the result is correct
+            Assert.IsTrue(OK);
+        }
+        [TestMethod]
+        public void TestPriceFound()
+        {
+            //create an instance of the class we want to create
+            clsProduct AnProduct = new clsProduct();
+            //boolean variable to store the result of the search
+            Boolean Found = false;
+            //boolean variable to store the result of the search
+            Boolean OK = true;
+            //create some test data to use with the method
+            Int32 ProductNo = 1;
+            //invoke the method
+            Found = AnProduct.Find(ProductNo);
+            //check the staff No
+            if (AnProduct.Price != 1)
+            {
+                OK = false;
+            }
+            //test the result is correct
+            Assert.IsTrue(OK);
+        }
+        [TestMethod]
+        public void TestActiveFound()
+        {
+            //create an instance of the class we want to create
+            clsProduct AnProduct = new clsProduct();
+            //boolean variable to store the result of the search
+            Boolean Found = false;
+            //boolean variable to store the result of the search
+            Boolean OK = true;
+            //create some test data to use with the method
+            Int32 ProductNo = 1;
+            //invoke the method
+            Found = AnProduct.Find(ProductNo);
+            //check the staff No
+            if (AnProduct.Active != true)
+            {
+                OK = false;
+            }
+            //test the result is correct
+            Assert.IsTrue(OK);
+        }
     }
 }
