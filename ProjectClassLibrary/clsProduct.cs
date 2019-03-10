@@ -7,8 +7,8 @@ namespace ProjectClassLibrary
         private Int32 mProductNo;
         private string mProductName;
         private string mDescription;
-        private string mPrice;
-        private Int32 mActive;
+        private decimal mPrice;
+        private bool mActive;
 
         public int ProductNo
         {

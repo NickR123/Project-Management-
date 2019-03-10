@@ -106,7 +106,7 @@ namespace ProjectTesting
         public void TestProductNameFound()
         {
             //create an instance of the class we want to create
-            clsProduct AnProduct = new clsProduct();
+            clsProduct AProduct = new clsProduct();
             //boolean variable to store the result of the search
             Boolean Found = false;
             //boolean variable to store the result of the search
@@ -114,9 +114,9 @@ namespace ProjectTesting
             //create some test data to use with the method
             Int32 ProductNo = 1;
             //invoke the method
-            Found = AnProduct.Find(ProductNo);
+            Found = AProduct.Find(ProductNo);
             //check the staff No
-            if (AnProduct.ProductName != "Samsung")
+            if (AProduct.ProductName != "Samsung")
             {
                 OK = false;
             }
@@ -127,7 +127,7 @@ namespace ProjectTesting
         public void TestDescriptionFound()
         {
             //create an instance of the class we want to create
-            clsProduct AnProduct = new clsProduct();
+            clsProduct AProduct = new clsProduct();
             //boolean variable to store the result of the search
             Boolean Found = false;
             //boolean variable to store the result of the search
@@ -135,9 +135,9 @@ namespace ProjectTesting
             //create some test data to use with the method
             Int32 ProductNo = 1;
             //invoke the method
-            Found = AnProduct.Find(ProductNo);
+            Found = AProduct.Find(ProductNo);
             //check the staff No
-            if (AnProduct.Description != "Black")
+            if (AProduct.Description != "Black")
             {
                 OK = false;
             }
@@ -148,7 +148,7 @@ namespace ProjectTesting
         public void TestPriceFound()
         {
             //create an instance of the class we want to create
-            clsProduct AnProduct = new clsProduct();
+            clsProduct AProduct = new clsProduct();
             //boolean variable to store the result of the search
             Boolean Found = false;
             //boolean variable to store the result of the search
@@ -156,9 +156,9 @@ namespace ProjectTesting
             //create some test data to use with the method
             Int32 ProductNo = 1;
             //invoke the method
-            Found = AnProduct.Find(ProductNo);
+            Found = AProduct.Find(ProductNo);
             //check the staff No
-            if (AnProduct.Price != 1)
+            if (AProduct.Price != 1)
             {
                 OK = false;
             }
@@ -169,7 +169,7 @@ namespace ProjectTesting
         public void TestActiveFound()
         {
             //create an instance of the class we want to create
-            clsProduct AnProduct = new clsProduct();
+            clsProduct AProduct = new clsProduct();
             //boolean variable to store the result of the search
             Boolean Found = false;
             //boolean variable to store the result of the search
@@ -177,9 +177,9 @@ namespace ProjectTesting
             //create some test data to use with the method
             Int32 ProductNo = 1;
             //invoke the method
-            Found = AnProduct.Find(ProductNo);
+            Found = AProduct.Find(ProductNo);
             //check the staff No
-            if (AnProduct.Active != true)
+            if (AProduct.Active != true)
             {
                 OK = false;
             }
