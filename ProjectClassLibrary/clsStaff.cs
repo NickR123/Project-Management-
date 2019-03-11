@@ -100,9 +100,72 @@ namespace ProjectClassLibrary
             }
         }
 
-        public string Valid(string StaffNo, string FirstName, string LastName, string StaffAddress, string StaffPhoneNo, string StaffPostCode)
+        public string Valid(string FirstName, string LastName, string StaffAddress, string StaffPhoneNo, string StaffPostCode)
         {
-            return "";
+            // create a string variable to store the error
+            String Error = "";
+            //if FirstName is blank
+            if(FirstName.Length == 0)
+            {
+                //record the error
+                Error = Error + "First name may not be left blank : ";
+            }
+            //if FirstName is greater than 30 characters
+            if (FirstName.Length > 30)
+            {
+                //record the error
+                Error = Error + "FirstName must be less than 30 characters : ";
+
+            }
+            if (LastName.Length == 0)
+            {
+                //record the error
+                Error = Error + "Lastname may not be left blank : ";
+            }
+            //if FirstName is greater than 30 characters
+            if (LastName.Length > 50)
+            {
+                //record the error
+                Error = Error + "LastName must be less than 30 characters : ";
+
+            }
+            if (StaffAddress.Length < 4)
+            {
+                //record the error
+                Error = Error + "Staff Address cannot be less than 4 characters : ";
+            }
+            //if FirstName is greater than 30 characters
+            if (StaffAddress.Length > 80)
+            {
+                //record the error
+                Error = Error + "StaffAddress must be less than 80 characters : ";
+
+            }
+            if (StaffPhoneNo.Length < 10)
+            {
+                //record the error
+                Error = Error + "StaffPhoneNo cannot be less than 10 characters : ";
+            }
+            //if FirstName is greater than 30 characters
+            if (StaffPhoneNo.Length > 16)
+            {
+                //record the error
+                Error = Error + "StaffPhoneNo must be less than 16 characters : ";
+
+            }
+            if (StaffPostCode.Length == 0)
+            {
+                //record the error
+                Error = Error + "StaffPostCode cannot be Null : ";
+            }
+            //if FirstName is greater than 30 characters
+            if (StaffPostCode.Length > 9)
+            {
+                //record the error
+                Error = Error + "StaffPostCode must be less than 9 characters : ";
+
+            }
+            return Error;
         }
     }
 }
