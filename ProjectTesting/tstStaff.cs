@@ -327,7 +327,7 @@ namespace ProjectTesting
             String Error = "";
             //some test data to pass the method
             string FirstName = "";
-            FirstName = FirstName.PadRight(30, 'a');
+            FirstName = FirstName.PadRight(31, 'a');
             //invoke the method
             Error = AStaff.Valid(FirstName, LastName, StaffAddress, StaffPhoneNo, staffPostCode);
             //Test to see that the result is correct
@@ -703,7 +703,7 @@ namespace ProjectTesting
             //invoke the method
             Error = AStaff.Valid(FirstName, LastName, StaffAddress, StaffPhoneNo, staffPostCode);
             //Test to see that the result is correct
-            Assert.AreEqual(Error, "");
+            Assert.AreNotEqual(Error, "");
         }
         [TestMethod]
         public void StaffPostCodeMin()
@@ -815,7 +815,7 @@ namespace ProjectTesting
             //invoke the method
             Error = AStaff.Valid(FirstName, LastName, StaffAddress, StaffPhoneNo, staffPostCode);
             //Test to see that the result is correct
-            Assert.AreEqual(Error, "");
+            Assert.AreNotEqual(Error, "");
         }
     }
     
