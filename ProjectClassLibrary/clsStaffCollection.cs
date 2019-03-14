@@ -5,6 +5,7 @@ namespace ProjectClassLibrary
     public class clsStaffCollection
     {
         List<clsStaff> mStaffList = new List<clsStaff>();
+        clsStaff mThisStaff = new clsStaff();
 
         public clsStaffCollection()
         {
@@ -51,6 +52,44 @@ namespace ProjectClassLibrary
                 // we shall worry about this later
             }
         }
-        public clsStaff ThisStaff { get; set; }
+        public clsStaff ThisStaff
+        {
+            get
+            {
+                //return the private data
+                return mThisStaff;
+            }
+            set
+            {
+                //set the private data
+                mThisStaff = value;
+            }
+        }
+
+        public int Add()
+        {
+            //adds a new record to the database based on the valyes of mThisStaff
+            //connect to the database
+            clsDataConnection DB = new clsDataConnection();
+            //set the parameters
+            DB.AddParameter("@FirstName", mThisStaff.FirstName);
+            DB.AddParameter("@LastName", mThisStaff.LastName);
+            DB.AddParameter("@Address", mThisStaff.StaffAddress);
+            DB.AddParameter("@PhoneNo", mThisStaff.StaffPhoneNo);
+            DB.AddParameter("@PostCode", mThisStaff.StaffPostCode);
+            //execute quey return the primary key value
+            return DB.Execute("sproc_TblStaff_Insert");
+        }
+
+        public void Delete()
+        {
+            //deletes the record pointed to by thisStaff
+            //connect to the database
+            clsDataConnection DB = new clsDataConnection();
+            //set the parameters fpr the stored procedure
+            DB.AddParameter("@StaffNo", mThisStaff.StaffNo);
+            //execute the stored procedure
+            DB.Execute("sproc_TblStaff_Delete");
+        }
     }
 }
