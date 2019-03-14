@@ -89,10 +89,50 @@ namespace ProjectClassLibrary
             }
         }
 
-        public string Valid(string someProductName)
+        public string Valid(string ProductName, string Description, string Price)
         {
-            return "";
+            // create a string variable to store the error
+            String Error = "";
+            //if Product Name is blank
+            if (ProductName.Length == 0)
+            {
+                //record the error
+                Error = Error + "Product name may not be left blank : ";
+            }
+            //if Product Name is greater than 40 characters
+            if (ProductName.Length > 40)
+            {
+                //record the error
+                Error = Error + "Product Name must be less than 25 characters : ";
+
+            }
+            if (Description.Length == 0)
+            {
+                //record the error
+                Error = Error + "Description may not be left blank : ";
+            }
+            //if description is greater than 30 characters
+            if (Description.Length > 50)
+            {
+                //record the error
+                Error = Error + "Description must be less than 30 characters : ";
+
+            }
+            if (Price.Length < 3)
+            {
+                //record the error
+                Error = Error + "Price cannot be less than 2 characters : ";
+            }
+            //if Price is greater than 30 characters
+            if (Price.Length > 8)
+            {
+                //record the error
+                Error = Error + "Price must be less than 8 characters : ";
+
+            }
+
+            return Error;
         }
+      }
     }
-}
 
