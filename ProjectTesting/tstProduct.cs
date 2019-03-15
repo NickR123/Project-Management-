@@ -8,6 +8,11 @@ namespace ProjectTesting
     [TestClass]
     public class tstProduct
     {
+        string ProductNo = "1";
+        string ProductName = "Samsung";
+        string Description = "Black";
+        string Price = "1000";
+        string Active = "true";
         [TestMethod]
         public void Instance2OK()
         {
@@ -77,7 +82,7 @@ namespace ProjectTesting
             clsProduct AProduct = new clsProduct();
             String Error = "";
             string SomeProductName = "Samsung";
-            Error = AProduct.Valid(SomeProductName);
+            Error = AProduct.Valid(ProductName, Description, Price);
             Assert.AreEqual(Error, "");
         }
         [TestMethod]

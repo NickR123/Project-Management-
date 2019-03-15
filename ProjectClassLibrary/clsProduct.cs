@@ -25,7 +25,7 @@ namespace ProjectClassLibrary
         {
             get
             {
-                return ProductName;
+                return mProductName;
             }
             set
             {
@@ -36,7 +36,7 @@ namespace ProjectClassLibrary
         {
             get
             {
-                return Description;
+                return mDescription;
             }
             set
             {
