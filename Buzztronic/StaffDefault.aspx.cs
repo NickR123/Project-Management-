@@ -38,6 +38,27 @@ namespace Buzztronic
             //redirects to the data entry page
             Response.Redirect("AnStaff.aspx");
         }
+
+        protected void BtnDelete_Click(object sender, EventArgs e)
+        {
+            //var to store the primary key value of the record to be deleted
+            Int32 StaffNo;
+            //if a record has been selected from the list
+            if(LstStaff.SelectedIndex != -1)
+            {
+                //get the primary key value of the record to be deleted
+                StaffNo = Convert.ToInt32(LstStaff.SelectedValue);
+                //store the data in the session object
+                Session["StaffNo"] = StaffNo;
+                //redirect to the delete page
+                Response.Redirect("StaffDefault.aspx");
+            }
+            else // if no record has been selected
+            {
+                //display an error
+                LblError.Text = "Please select a record to delete from the list";
+            }
+        }
     }
 
 }
