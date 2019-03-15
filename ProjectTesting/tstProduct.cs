@@ -81,7 +81,6 @@ namespace ProjectTesting
         {
             clsProduct AProduct = new clsProduct();
             String Error = "";
-            string SomeProductName = "Samsung";
             Error = AProduct.Valid(ProductName, Description, Price);
             Assert.AreEqual(Error, "");
         }
@@ -488,7 +487,7 @@ namespace ProjectTesting
             //invoke the method
             Error = AProduct.Valid(ProductName, Description, Price);
             //Test to see that the result is correct
-            Assert.AreNotEqual(Error, "");
+            Assert.AreEqual(Error, "");
         }
         [TestMethod]
         public void PriceMax()
