@@ -15,7 +15,7 @@
         <asp:Label ID="lblProductName" runat="server" style="z-index: 1; left: 417px; top: 204px; position: absolute" Text="Product Name"></asp:Label>
         <asp:Label ID="lblDescription" runat="server" style="z-index: 1; left: 416px; top: 239px; position: absolute" Text="Description"></asp:Label>
         <asp:Label ID="lblPrice" runat="server" style="z-index: 1; left: 414px; top: 270px; position: absolute" Text="Price"></asp:Label>
-        <asp:CheckBox ID="CheckBoxActive" runat="server" style="z-index: 1; left: 410px; top: 320px; position: absolute" Text="Active" />
+        <asp:CheckBox ID="chkActive" runat="server" style="z-index: 1; left: 410px; top: 320px; position: absolute" Text="Active" />
         <asp:TextBox ID="txtProductNo" runat="server" style="z-index: 1; left: 513px; top: 166px; position: absolute"></asp:TextBox>
         <asp:TextBox ID="txtProductName" runat="server" style="z-index: 1; left: 514px; top: 206px; position: absolute"></asp:TextBox>
         <asp:TextBox ID="txtDescription" runat="server" style="z-index: 1; left: 512px; top: 234px; position: absolute"></asp:TextBox>
