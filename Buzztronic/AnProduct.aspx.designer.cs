@@ -58,13 +58,13 @@ namespace Buzztronic {
         protected global::System.Web.UI.WebControls.Label lblPrice;
         
         /// <summary>
-        /// CheckBoxActive control.
+        /// chkActive control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBoxActive;
+        protected global::System.Web.UI.WebControls.CheckBox chkActive;
         
         /// <summary>
         /// txtProductNo control.
