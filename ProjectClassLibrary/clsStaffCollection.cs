@@ -91,5 +91,21 @@ namespace ProjectClassLibrary
             //execute the stored procedure
             DB.Execute("sproc_TblStaff_Delete");
         }
+
+        public void Update()
+        {
+            //update an existing record based on the values of ThisStaff
+            //database connection
+            clsDataConnection DB = new clsDataConnection();
+            //set the parameters fpr the stored procedure
+            DB.AddParameter("@StaffNo", mThisStaff.StaffNo);
+            DB.AddParameter("@FirstName", mThisStaff.FirstName);
+            DB.AddParameter("@LastName", mThisStaff.LastName);
+            DB.AddParameter("@Address", mThisStaff.StaffAddress);
+            DB.AddParameter("@PhoneNo", mThisStaff.StaffPhoneNo);
+            DB.AddParameter("@PostCode", mThisStaff.StaffPostCode);
+            //execute the stored procedure
+            DB.Execute("sproc_TblStaff_Update");
+        }
     }
 }
