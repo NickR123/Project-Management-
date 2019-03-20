@@ -177,8 +177,30 @@ namespace ProjectTesting
             //test to see ThisStaff matches the test data
             Assert.AreEqual(AllStaff.ThisStaff, TestItem);
 
+        }
 
+        [TestMethod]
+        public void ReportByFirstNameOK()
+        {
+            //create an instance of the class containing unfiltered results
+            clsStaffCollection AllStaff = new clsStaffCollection();
+            //create an instance of the filtered data
+            clsStaffCollection FilteredStaff = new clsStaffCollection();
+            //apply a blank string(Should return all records);
+            FilteredStaff.ReportByFirstName("");
+            //test to see that the two values are the same
+            Assert.AreEqual(AllStaff.Count, FilteredStaff.Count);
+        }
 
+        [TestMethod]
+        public void ReportByFirstNameNoneFound()
+        {
+            //create an instance of the filtered data
+            clsStaffCollection FilteredStaff = new clsStaffCollection();
+            //apply a First name that doesn't exist
+            FilteredStaff.ReportByFirstName("qqqqq");
+            //test to see that there are no records
+            Assert.AreEqual(0, FilteredStaff.Count);
 
         }
 
