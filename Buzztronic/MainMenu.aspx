@@ -17,6 +17,7 @@
         <asp:Button ID="BtnProductMenu" runat="server" OnClick="BtnProductMenu_Click" style="z-index: 1; left: 751px; top: 326px; position: absolute; height: 49px; width: 218px" Text="Product menu" />
         <asp:Button ID="BtnOrderMenu" runat="server" OnClick="BtnOrderMenu_Click" style="z-index: 1; left: 751px; top: 387px; position: absolute; height: 46px; width: 216px" Text="Order Menu" />
         <asp:Button ID="BtnManufacturerMenu" runat="server" OnClick="BtnManufacturerMenu_Click" style="z-index: 1; left: 752px; top: 444px; position: absolute; height: 45px; width: 216px" Text="Manufacturer Menu" />
+        <asp:Button ID="BtnCustomerMenu" runat="server" style="z-index: 1; left: 748px; top: 503px; position: absolute; width: 221px; height: 36px" Text="Customer Menu" />
     </form>
 </body>
 </html>
