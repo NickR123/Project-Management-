@@ -51,7 +51,7 @@ namespace Buzztronic
                 //store the data in the session object
                 Session["StaffNo"] = StaffNo;
                 //redirect to the delete page
-                Response.Redirect("StaffDefault.aspx");
+                Response.Redirect("StaffDelete.aspx");
             }
             else // if no record has been selected
             {
