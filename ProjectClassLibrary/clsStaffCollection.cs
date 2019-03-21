@@ -9,12 +9,26 @@ namespace ProjectClassLibrary
 
         public clsStaffCollection()
         {
-            Int32 Index = 0;
-            Int32 RecordCount = 0;
+            //object for data connection
             clsDataConnection DB = new clsDataConnection();
+            //execute the stored procedure
             DB.Execute("sproc_tblStaff_SelectAll");
+            //populate the array list with the data table
+            PopulateArray(DB);
+        }
+        void PopulateArray(clsDataConnection DB)
+        {
+            //populates the array list based on the data table in the parameter DB
+            //Var for the index
+            Int32 Index = 0;
+            //var to store the record count
+            Int32 RecordCount;
+            //get the count of records
             RecordCount = DB.Count;
-            while(Index < RecordCount)
+            //clear the private array list
+            mStaffList = new List<clsStaff>();
+            //while there are records to process
+            while (Index < RecordCount)
             {
                 clsStaff AnStaff = new clsStaff();
                 AnStaff.StaffNo = Convert.ToInt32(DB.DataTable.Rows[Index]["StaffNo"]);
@@ -23,7 +37,9 @@ namespace ProjectClassLibrary
                 AnStaff.StaffAddress = Convert.ToString(DB.DataTable.Rows[Index]["Address"]);
                 AnStaff.StaffPhoneNo = Convert.ToInt32(DB.DataTable.Rows[Index]["PhoneNo"]);
                 AnStaff.StaffPostCode = Convert.ToString(DB.DataTable.Rows[Index]["PostCode"]);
+                //add the record to the private data member
                 mStaffList.Add(AnStaff);
+                //point at the next record
                 Index++;
             }
         }
@@ -90,6 +106,35 @@ namespace ProjectClassLibrary
             DB.AddParameter("@StaffNo", mThisStaff.StaffNo);
             //execute the stored procedure
             DB.Execute("sproc_TblStaff_Delete");
+        }
+
+        public void Update()
+        {
+            //update an existing record based on the values of ThisStaff
+            //database connection
+            clsDataConnection DB = new clsDataConnection();
+            //set the parameters fpr the stored procedure
+            DB.AddParameter("@StaffNo", mThisStaff.StaffNo);
+            DB.AddParameter("@FirstName", mThisStaff.FirstName);
+            DB.AddParameter("@LastName", mThisStaff.LastName);
+            DB.AddParameter("@Address", mThisStaff.StaffAddress);
+            DB.AddParameter("@PhoneNo", mThisStaff.StaffPhoneNo);
+            DB.AddParameter("@PostCode", mThisStaff.StaffPostCode);
+            //execute the stored procedure
+            DB.Execute("sproc_TblStaff_Update");
+        }
+
+        public void ReportByFirstName(string FirstName)
+        {
+            //filters the records based on a full or partial First name
+            //connect to the database
+            clsDataConnection DB = new clsDataConnection();
+            //send the postcode parameter to the database
+            DB.AddParameter("@FirstName", FirstName);
+            //execute the stored procedure
+            DB.Execute("sproc_TblStaff_FilterByFirstName");
+            //populate the array list with the data table
+            PopulateArray(DB);
         }
     }
 }

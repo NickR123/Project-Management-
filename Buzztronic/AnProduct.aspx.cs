@@ -33,7 +33,7 @@ namespace Buzztronic
             }
             else
             {
-                LblError.Text = "There were problems with the data entered" + Error;
+                lblError.Text = "There were problems with the data entered" + Error;
             }
         }
 
