@@ -59,6 +59,27 @@ namespace Buzztronic
                 lblError.Text = "Please select a record to delete from the list";
             }
         }
+
+        protected void BtnEdit_Click(object sender, EventArgs e)
+        {
+            //var to store the primary key value
+            Int32 ProductNo;
+            //if a record has been selected from the list
+            if (lstProduct.SelectedIndex != -1)
+            {
+                //get the primary key value of the record to edit
+                ProductNo = Convert.ToInt32(lstProduct.SelectedValue);
+                //store the data in the session object
+                Session["ProductNo"] = ProductNo;
+                //redirect to the edit page
+                Response.Redirect("AnProduct.aspx");
+            }
+            else//if no record has been selected
+            {
+                //display an error
+                lblError.Text = "Please select a record to delete from the list";
+            }
+        }
     }
 
 }

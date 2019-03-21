@@ -133,5 +133,65 @@ namespace ProjectTesting
 
 
         }
+
+        [TestMethod]
+        public void UpdateMethodOK()
+        {
+            //create an instance of the class we want to create
+            clsProductCollection AllProduct = new clsProductCollection();
+            //create the item of test data
+            clsProduct TestItem = new clsProduct();
+            Int32 PrimaryKey = 0;
+            //set its properties
+            TestItem.ProductName = "Samsung";
+            TestItem.Description = "Black";
+            TestItem.Price = 1234;
+            TestItem.Active= true;
+            //set ThisProduct to test the data
+            AllProduct.ThisProduct = TestItem;
+            //add the record
+            PrimaryKey = AllProduct.Add();
+            //set primary key of 
+            TestItem.ProductNo = PrimaryKey;
+            //modify the test data
+            TestItem.ProductName = "IPhone";
+            TestItem.Description = "Gold";
+            TestItem.Price = 124;
+            TestItem.Active = false;
+            //set the record based on the new test data
+            AllProduct.ThisProduct = TestItem;
+            //update the record
+            AllProduct.Update();
+            //find the record
+            AllProduct.ThisProduct.Find(PrimaryKey);
+            //test to see ThisStaff matches the test data
+            Assert.AreEqual(AllProduct.ThisProduct, TestItem);
+
+        }
+
+        [TestMethod]
+        public void ReportByProductNameOK()
+        {
+            //create an instance of the class containing unfiltered results
+            clsProductCollection AllStaff = new clsProductCollection();
+            //create an instance of the filtered data
+            clsProductCollection FilteredProduct = new clsProductCollection();
+            //apply a blank string(Should return all records);
+            FilteredProduct.ReportByProductName("");
+            //test to see that the two values are the same
+            Assert.AreEqual(AllProduct.Count, FilteredProduct.Count);
+        }
+
+        [TestMethod]
+        public void ReportByFirstNameNoneFound()
+        {
+            //create an instance of the filtered data
+            clsProductCollection FilteredProduct = new clsProductCollection();
+            //apply a Product name that doesn't exist
+            FilteredProduct.ReportByProductName("qqqqq");
+            //test to see that there are no records
+            Assert.AreEqual(0, FilteredProduct.Count);
+
+        }
     }
 }
