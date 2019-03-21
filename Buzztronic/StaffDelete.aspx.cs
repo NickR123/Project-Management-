@@ -35,5 +35,10 @@ namespace Buzztronic
             //redirects back to the default page
             Response.Redirect("StaffDefault.aspx");
         }
+
+        protected void BtnNo_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("StaffDefault.aspx");
+        }
     }
 }

@@ -25,7 +25,7 @@
         <asp:TextBox ID="TxtStaffPostCode" runat="server" style="z-index: 1; left: 513px; top: 337px; position: absolute"></asp:TextBox>
         <asp:Label ID="LblError" runat="server" style="z-index: 1; left: 416px; top: 378px; position: absolute" Text="[lblError]"></asp:Label>
         <asp:Button ID="BtnOkay" runat="server" style="z-index: 1; left: 412px; top: 412px; position: absolute" Text="Okay" OnClick="BtnOkay_Click" />
-        <asp:Button ID="BtnCancel" runat="server" style="z-index: 1; left: 470px; top: 412px; position: absolute" Text="Cancel" />
+        <asp:Button ID="BtnCancel" runat="server" style="z-index: 1; left: 470px; top: 412px; position: absolute" Text="Cancel" OnClick="BtnCancel_Click" />
     </form>
 </body>
 </html>

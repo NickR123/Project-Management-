@@ -30,6 +30,7 @@
         <p>
             <asp:Button ID="btnEdit" runat="server" Height="29px" OnClick="btnEdit_Click" Text="Edit" />
         </p>
+        <asp:Button ID="BtnProductReturn" runat="server" OnClick="BtnProductReturn_Click" style="z-index: 1; left: 9px; top: 17px; position: absolute; width: 129px; height: 47px" Text="Return" />
     </form>
 </body>
 </html>

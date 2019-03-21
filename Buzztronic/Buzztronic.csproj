@@ -70,6 +70,7 @@
   <ItemGroup>
     <Content Include="AnProduct.aspx" />
     <Content Include="AnStaff.aspx" />
+    <Content Include="MainMenu.aspx" />
     <Content Include="ProductDefault.aspx" />
     <Content Include="ProductDelete.aspx" />
     <Content Include="StaffDefault.aspx" />
@@ -91,6 +92,13 @@
     </Compile>
     <Compile Include="AnStaff.aspx.designer.cs">
       <DependentUpon>AnStaff.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MainMenu.aspx.cs">
+      <DependentUpon>MainMenu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MainMenu.aspx.designer.cs">
+      <DependentUpon>MainMenu.aspx</DependentUpon>
     </Compile>
     <Compile Include="ProductDefault.aspx.cs">
       <DependentUpon>ProductDefault.aspx</DependentUpon>

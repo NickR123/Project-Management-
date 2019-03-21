@@ -80,6 +80,11 @@ namespace Buzztronic
                 LblError.Text = "Please select a record to delete from the list";
             } 
         }
+
+        protected void BtnStaffReturn_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("MainMenu.aspx");
+        }
     }
 
 }
