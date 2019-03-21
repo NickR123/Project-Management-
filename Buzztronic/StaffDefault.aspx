@@ -20,6 +20,7 @@
         <asp:Button ID="BtnAdd" runat="server" style="z-index: 1; left: 464px; top: 467px; position: absolute; width: 55px; height: 23px" Text="Add" OnClick="BtnAdd_Click" />
         <asp:Button ID="BtnEdit" runat="server" style="z-index: 1; top: 466px; position: absolute; height: 24px; width: 56px; left: 520px" Text="Edit" OnClick="BtnEdit_Click" />
         <asp:Button ID="BtnDelete" runat="server" style="z-index: 1; left: 580px; top: 465px; position: absolute" Text="Delete" OnClick="BtnDelete_Click" />
+        <asp:Button ID="BtnStaffReturn" runat="server" OnClick="BtnStaffReturn_Click" style="z-index: 1; left: 12px; top: 23px; position: absolute; width: 126px; height: 50px" Text="Return" />
     </form>
 </body>
 </html>

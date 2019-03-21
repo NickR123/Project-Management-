@@ -48,10 +48,12 @@ namespace ProjectClassLibrary
         {
             get
             {
+                //return the list
                 return mStaffList;
             }
             set
             {
+                //set the list
                 mStaffList = value;
             }
         }

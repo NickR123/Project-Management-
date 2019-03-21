@@ -18,12 +18,15 @@ namespace ProjectTesting
         [TestMethod]
         public void InstanceOK()
         {
+            //create an instance of cls staff
             clsStaff AStaff = new clsStaff();
+            //check that it exists
             Assert.IsNotNull(AStaff);
         }
         [TestMethod]
         public void FirstNameOK()
         {
+            //check that the first name property is ok and can be found
             clsStaff AStaff = new clsStaff();
             string SomeFirstName = "Fred";
             AStaff.FirstName = SomeFirstName;
@@ -33,6 +36,7 @@ namespace ProjectTesting
         [TestMethod]
         public void LastNameOK()
         {
+            //check that the Last name property is ok and can be found
             clsStaff AStaff = new clsStaff();
             string SomeLastName = "Fred";
             AStaff.LastName = SomeLastName;
@@ -42,6 +46,7 @@ namespace ProjectTesting
         [TestMethod]
         public void StaffAddressOK()
         {
+            //check that the staff address property is ok and can be found
             clsStaff AStaff = new clsStaff();
             string SomeStaffAddress = "Jimblor";
             AStaff.StaffAddress = SomeStaffAddress;
@@ -51,6 +56,7 @@ namespace ProjectTesting
         [TestMethod]
         public void StaffNoOK()
         {
+            //check that the Staff No property is ok and can be found
             clsStaff AStaff = new clsStaff();
             int SomeStaffNo = 123;
             AStaff.StaffNo = SomeStaffNo;
@@ -60,6 +66,7 @@ namespace ProjectTesting
         [TestMethod]
         public void StaffPhoneNoOK()
         {
+            //check that the staff phone No property is okay and can be found
             clsStaff AStaff = new clsStaff();
             int SomeStaffPhoneNo = 1234567891;
             AStaff.StaffPhoneNo = SomeStaffPhoneNo;
@@ -69,6 +76,7 @@ namespace ProjectTesting
         [TestMethod]
         public void StaffPostCode()
         {
+            //check that the staff postcode property is ok and can be found
             clsStaff AStaff = new clsStaff();
             var SomeStaffPostCode = "LE7 2UR";
             AStaff.StaffPostCode = SomeStaffPostCode;
@@ -78,6 +86,7 @@ namespace ProjectTesting
         [TestMethod]
         public void FindMethodOk()
         {
+            //check that the Find Method property is ok and can be found
             clsStaff AStaff = new clsStaff();
             Boolean Found = false;
             Int32 StaffNo = 1;
@@ -88,6 +97,7 @@ namespace ProjectTesting
         [TestMethod]
         public void ValidMethodOk()
         {
+            //check that the valid method is okay and can be found
             clsStaff AStaff = new clsStaff();
             String Error = "";
             Error = AStaff.Valid(FirstName,LastName,StaffAddress,StaffPhoneNo,staffPostCode);

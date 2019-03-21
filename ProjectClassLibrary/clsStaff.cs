@@ -4,6 +4,7 @@ namespace ProjectClassLibrary
 {
     public class clsStaff
     {
+        //private data members for the properties
         private Int32 mStaffNo;
         private string mFirstName;
         private string mLastName;
@@ -14,10 +15,12 @@ namespace ProjectClassLibrary
         {
             get
             {
+                //return the private data
                 return mFirstName;
             }
             set
             {
+                //set private data
                 mFirstName = value;
             }
         }
@@ -25,10 +28,12 @@ namespace ProjectClassLibrary
         {
             get
             {
+                //return the private data
                 return mLastName;
             }
             set
             {
+                //set private data
                 mLastName = value;
             }
         }
@@ -36,10 +41,12 @@ namespace ProjectClassLibrary
         {
             get
             {
+                //return the private data
                 return mStaffAddress;
             }
             set
             {
+                //set private data
                 mStaffAddress = value;
             }
         }
@@ -52,6 +59,7 @@ namespace ProjectClassLibrary
             }
             set
             {
+                //set private data
                 mStaffNo = value;
             }
         }
@@ -59,10 +67,12 @@ namespace ProjectClassLibrary
         {
             get
             {
+                //return the private data
                 return mStaffPhoneNo;
             }
             set
             {
+                //set private data
                 mStaffPhoneNo = value;
             }
         }
@@ -70,21 +80,26 @@ namespace ProjectClassLibrary
         {
             get
             {
+                //return the private data
                 return mStaffPostCode;
             }
             set
             {
+                //set private data
                 mStaffPostCode = value;
             }
         }
 
         public bool Find(int staffNo)
         {
+            //instance of the data conntection
             clsDataConnection DB = new clsDataConnection();
             DB.AddParameter("@StaffNo", staffNo);
+            //execute the stored procedure
             DB.Execute("sproc_TblStaff_FilterByStaffNo");
             if(DB.Count == 1)
             {
+                //copy the data from the database into the private data members
                 mStaffNo = Convert.ToInt32(DB.DataTable.Rows[0]["StaffNo"]);
                 mFirstName = Convert.ToString(DB.DataTable.Rows[0]["FirstName"]);
                 mLastName = Convert.ToString(DB.DataTable.Rows[0]["LastName"]);
@@ -94,8 +109,10 @@ namespace ProjectClassLibrary
                 // return that everything worked ok
                 return true;
             }
+            //if no record was found
             else
             {
+                //return false indicating a problem
                 return false;
             }
         }

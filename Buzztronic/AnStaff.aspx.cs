@@ -99,5 +99,11 @@ namespace Buzztronic
                 Update();
             }
         }
+
+        protected void BtnCancel_Click(object sender, EventArgs e)
+        {
+            //redirect to the default page
+            Response.Redirect("StaffDefault.aspx");
+        }
     }
 }
