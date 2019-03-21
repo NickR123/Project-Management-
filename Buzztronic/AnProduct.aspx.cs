@@ -15,9 +15,9 @@ namespace Buzztronic
         
         protected void Page_Load(object sender, EventArgs e)
         {
-            //get the  number of the Staff to be processed
+            //get the  number of the Product to be processed
             ProductNo = Convert.ToInt32(Session["ProductNo"]);
-            if (StaffNo != -1)
+            if (ProductNo != -1 & IsPostBack==false)
             {
                 //display the current data for the record
                 DisplayProduct();
@@ -49,17 +49,17 @@ namespace Buzztronic
         void Update()
         {
             clsProductCollection ProductCollect = new clsProductCollection();
-            String Error = ProductCollect.ThisProduct.Valid(txtProductName.Text, txtDescription.Text, txtPrice.Text, txtActive.Text);
+            String Error = ProductCollect.ThisProduct.Valid(txtProductName.Text, txtDescription.Text, txtPrice.Text);
             //if the data is OK then add it to the objct
             if (Error == "")
             {
                 //find the record to update
                 ProductCollect.ThisProduct.Find(ProductNo);
                 //get data entered by the user
-                ProductCollect.ThisProduct.ProductName = TxtProductName.Text;
-                ProductCollect.ThisProduct.Description = TxtDescription.Text;
-                ProductCollect.ThisProduct.Price = TxtPrice.Text;
-                ProductCollect.ThisProduct.Active = Convert.ToInt32(TxtActive.Text);
+                ProductCollect.ThisProduct.ProductName = txtProductName.Text;
+                ProductCollect.ThisProduct.Description = txtDescription.Text;
+                ProductCollect.ThisProduct.Price = Convert.ToDecimal(txtPrice.Text);
+                ProductCollect.ThisProduct.Active = chkActive.Checked;
                 
                 //update the record
                 ProductCollect.Update();
@@ -69,28 +69,34 @@ namespace Buzztronic
             else
             {
                 //report an error
-                LblError.Text = "There were problems with the data entered " + Error;
+                lblError.Text = "There were problems with the data entered " + Error;
             }
         }
         void DisplayProduct()
         {
-            //create an instance of staff collect
+            //create an instance of Product Collection
             clsProductCollection ProductCollect = new clsProductCollection();
             //find the record to update
-            ProductCollect.ThisProduct.Find(StaffNo);
+            ProductCollect.ThisProduct.Find(ProductNo);
             //display the data for this record
-            TxtProductName.Text = ProductCollect.ThisProduct.ProductName;
-            TxtDescription.Text = ProductCollect.ThisProduct.Description;
-            TxtPrice.Text = ProductCollect.ThisProduct.Price;
-            TxtActive.Text = ProductCollect.ThisProduct.Active;
+            txtProductName.Text = ProductCollect.ThisProduct.ProductName;
+            txtDescription.Text = ProductCollect.ThisProduct.Description;
+            txtPrice.Text = ProductCollect.ThisProduct.Price.ToString();
+            chkActive.Checked = ProductCollect.ThisProduct.Active;
         }
 
         protected void btnOkay_Click(object sender, EventArgs e)
         {
-            //add the new record
-            Add();
-            //all done so go back to the main page
-            Response.Redirect("ProductDefault.aspx");
+            if (ProductNo == -1)
+            {
+                //add the new record
+                Add();
+            }
+            else
+            {
+                //update the record
+                Update();
+            }
         }
     }
 }

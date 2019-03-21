@@ -51,7 +51,7 @@ namespace Buzztronic
                 //store the data in the session object
                 Session["ProductNo"] = ProductNo;
                 //redirect to the delete page
-                Response.Redirect("ProductDefault.aspx");
+                Response.Redirect("ProductDelete.aspx");
             }
             else // if no record has been selected
             {
@@ -60,7 +60,7 @@ namespace Buzztronic
             }
         }
 
-        protected void BtnEdit_Click(object sender, EventArgs e)
+        protected void btnEdit_Click(object sender, EventArgs e)
         {
             //var to store the primary key value
             Int32 ProductNo;

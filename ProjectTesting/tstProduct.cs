@@ -120,7 +120,7 @@ namespace ProjectTesting
             //invoke the method
             Found = AProduct.Find(ProductNo);
             //check the staff No
-            if (AProduct.ProductName != "Samsung")
+            if (AProduct.ProductName != "Samsung S9")
             {
                 OK = false;
             }
@@ -162,7 +162,7 @@ namespace ProjectTesting
             //invoke the method
             Found = AProduct.Find(ProductNo);
             //check the staff No
-            if (AProduct.Price != 1)
+            if (AProduct.Price != 1000)
             {
                 OK = false;
             }

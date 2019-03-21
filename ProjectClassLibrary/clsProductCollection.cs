@@ -112,6 +112,7 @@ namespace ProjectClassLibrary
             //database connection
             clsDataConnection DB = new clsDataConnection();
             //set the parameters fpr the stored procedure
+            DB.AddParameter("@ProductNo", mThisProduct.ProductNo);
             DB.AddParameter("@ProductName", mThisProduct.ProductName);
             DB.AddParameter("@Description", mThisProduct.Description);
             DB.AddParameter("@Price", mThisProduct.Price);
@@ -128,7 +129,7 @@ namespace ProjectClassLibrary
             //send the postcode parameter to the database
             DB.AddParameter("@ProductName", ProductName);
             //execute the stored procedure
-            DB.Execute("sproc_tbl_FilterByProductName");
+            DB.Execute("sproc_tblProduct_FilterByProductName");
             //populate the array list with the data table
             PopulateArray(DB);
         }
