@@ -16,7 +16,7 @@ namespace Buzztronic
         {
             //get the  number of the Staff to be processed
             StaffNo = Convert.ToInt32(Session["StaffNo"]);
-            if (StaffNo != -1)
+            if (StaffNo != -1 & IsPostBack==false)
             {
                 //display the current data for the record
                 DisplayStaff();
