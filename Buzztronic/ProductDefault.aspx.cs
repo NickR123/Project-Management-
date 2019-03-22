@@ -85,6 +85,48 @@ namespace Buzztronic
         {
             Response.Redirect("MainMenu.aspx");
         }
+
+      
+
+        protected void btnDisplayAll_Click(object sender, EventArgs e)
+        {
+            //display all addresses
+            DisplayProductName("");
+        }
+        Int32 DisplayProductName(string ProductNameFilter)
+        {
+            Int32 ProductNo; // var to store the primary key
+            string ProductName; // var to store the surname
+            
+                              //create an instance of the address collection class
+            clsProductCollection Product = new clsProductCollection();
+            Product.ReportByProductName(ProductNameFilter);
+            Int32 RecordCount; // var to store the count of records
+            Int32 Index = 0; // var to store the index for the loop
+            RecordCount = Product.Count; //get the count of records
+            lstProduct.Items.Clear();
+            while (Index < RecordCount) // while there are records to process
+            {
+                ProductNo = Product.ProductList[Index].ProductNo; //get the primary key
+                ProductName = Product.ProductList[Index].ProductName; //get the Surnanme
+                
+                                                                               //create a new entry for the listbox
+                ListItem NewEntry = new ListItem(ProductName, ProductNo.ToString());
+                lstProduct.Items.Add(NewEntry);
+                Index++;
+
+            }
+            return RecordCount;//return the count of records found
+        }
+
+        protected void btnApply_Click(object sender, EventArgs e)
+        {
+            
+            
+                //display the player matching the text in the surname box
+                DisplayProductName(txtProductName.Text);
+            
+        }
     }
 
 }
