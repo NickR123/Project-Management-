@@ -38,7 +38,7 @@
         <p>
             &nbsp;</p>
         <p style="height: 51px">
-            <asp:Button ID="btnApply" runat="server" OnClick="btnApply_Click" Text="Apply" Width="69px" />
+            <asp:Button ID="btnApply" runat="server" style="z-index: 1; top: 428px; position: absolute; left: 463px; height: 27px" OnClick="btnApply_Click" Text="Apply"  />
         </p>
         <p>
             <asp:Button ID="btnEdit" runat="server" style="z-index: 1; left: 580px; top: 465px; position: absolute" OnClick="btnEdit_Click" Text="Edit" />

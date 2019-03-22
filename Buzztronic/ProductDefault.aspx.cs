@@ -93,6 +93,8 @@ namespace Buzztronic
             //display all addresses
             DisplayProductName("");
         }
+
+
         Int32 DisplayProductName(string ProductNameFilter)
         {
             Int32 ProductNo; // var to store the primary key
